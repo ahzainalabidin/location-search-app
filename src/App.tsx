@@ -1,7 +1,11 @@
+import { useState } from "react";
 import LocationSearch from "./components/LocationSearch";
 import Map from "./components/Map";
+import type { Place } from "./api/Place";
 
 function App() {
+
+  const [place, setPlace] = useState<Place | null>(null);
 
   return (
     <div className="h-screen w-screen grid grid-cols-12">
@@ -11,7 +15,7 @@ function App() {
       </div>
 
       <div className="col-span-9">
-        <Map />
+        <Map place={place} />
       </div>
 
     </div>
