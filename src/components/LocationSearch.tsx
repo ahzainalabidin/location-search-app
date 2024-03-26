@@ -10,9 +10,13 @@ export default function LocationSearch({ onPlaceClick }: LocationSearchProps) {
     const [term, setTerm] = useState('');
     const [place, setPlace] = useState<Place[]>([]);
 
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    };
+
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label className="font-bold" htmlFor="term">
                     Search
                 </label>
